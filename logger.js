@@ -1,5 +1,6 @@
 const logger = (req, res, next) => {
-    console.log((new Date).toLocaleString(), req.method, req.originalUrl);
+    const today = new Date();
+    console.log(today.toLocaleString(), req.method, req.originalUrl);
     next();
 };
 
