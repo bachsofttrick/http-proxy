@@ -13,7 +13,7 @@ const serverList = [
     new Server(false, '/activity', 'localhost:4005'),
     new Server(false, '/config', 'localhost:4006'),
     new Server(false, '/member', 'localhost:4002'),
-    new Server(true, '/promotions', 'localhost:4008'),
+    new Server(false, '/promotions', 'localhost:4008'),
     new Server(false, '/sale', 'localhost:4004'),
     new Server(true, '/shop', 'localhost:4003'),
     new Server(false, '/user', 'localhost:4001'),
