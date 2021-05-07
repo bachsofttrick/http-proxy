@@ -2,7 +2,13 @@ const express = require('express');
 const router = require('./router');
 const logger = require('./logger');
 const app = express();
-const port = 80;
+let port = 80;
+
+// Parse port number. If not defined, use default port
+let args = process.argv.slice(2);
+if (args[0]) {
+  port = parseInt(args[0]);
+}
 
 // Load plugins/middlewares
 app.use(logger, router);
