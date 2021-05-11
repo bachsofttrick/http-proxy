@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "set NODE_ENV=production&&supervisor -- index.js 80",
-    "serve": "nodemon index.js 80"
+    "start": "set NODE_ENV=production&&supervisor index.js",
+    "serve": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
