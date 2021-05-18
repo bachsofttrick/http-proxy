@@ -11,10 +11,10 @@ const options = {
 };
 
 for (const server of serverList) {
-    // Print list of servers to check for accuracy
-    console.log(`[${server.route}] [${server.internalRoute}]`, server.host);
+    // Print list of servers to check for accuracy (external only)
+    console.log(`[${server.route}]`, server.host);
     router.use(server.route, proxy(server.host, options));
-    router.use(server.internalRoute, proxy(server.host, options));
+    router.use(server.internalRoute, proxy(server.internalHost, options));
 }
 
 module.exports = router;
