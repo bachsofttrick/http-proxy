@@ -10,6 +10,9 @@ const options = {
     }
 };
 
+// Frontend route
+router.use('/', express.static(`${__dirname}/dist`));
+
 for (const server of serverList) {
     // Print list of servers to check for accuracy (external only)
     console.log(`[${server.route}]`, server.host);
