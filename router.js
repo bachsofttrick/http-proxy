@@ -10,14 +10,17 @@ const options = {
     }
 };
 
-// Frontend route
-router.use('/', express.static(`${__dirname}/dist`));
-
 for (const server of serverList) {
     // Print list of servers to check for accuracy (external only)
     console.log(`[${server.route}]`, server.host);
     router.use(server.route, proxy(server.host, options));
     router.use(server.internalRoute, proxy(server.internalHost, options));
 }
+
+// Frontend route (History mode enabled)
+router.use(express.static(`${__dirname}/dist`));
+router.use('/*', (req, res) => {
+    res.sendFile(`${__dirname}/dist/index.html`);
+});
 
 module.exports = router;
