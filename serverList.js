@@ -1,5 +1,5 @@
 // External server is not included
-const notUsingLocal = require('./key');
+const { notUsingLocal } = require('./key');
 class Server {
     constructor(useLocal, route, host) {
         // Use localhost or external server

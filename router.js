@@ -1,6 +1,7 @@
 // Route Assignment
 const express = require('express');
 const proxy = require('express-http-proxy');
+const { distFolder } = require('./key');
 const serverList = require('./serverList');
 const router = express.Router();
 
@@ -18,9 +19,9 @@ for (const server of serverList) {
 }
 
 // Frontend route (History mode enabled)
-router.use(express.static(`${__dirname}/dist`));
+router.use(express.static(`${distFolder}`));
 router.use('/*', (req, res) => {
-    res.sendFile(`${__dirname}/dist/index.html`);
+    res.sendFile(`${distFolder}index.html`);
 });
 
 module.exports = router;
