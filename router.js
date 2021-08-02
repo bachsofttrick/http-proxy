@@ -18,6 +18,9 @@ for (const server of serverList) {
     router.use(server.internalRoute, proxy(server.internalHost, options));
 }
 
+// For Loopback API Explorer
+router.use('/explorer', proxy('localhost:3000', options));
+    
 // Frontend route (History mode enabled)
 router.use(express.static(`${distFolder}`));
 router.use('/*', (req, res) => {
