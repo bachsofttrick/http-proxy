@@ -11,7 +11,7 @@ const serverList = [
     new Microservice(true, '/notification', 'localhost:4007'),
     new Microservice(false, '/promotions', 'localhost:4008'),
     new Microservice(false, '/report', 'localhost:4011'),
-    new Microservice(false, '/sale', 'localhost:4004'),
+    new Microservice(true, '/sale', 'localhost:4004'),
     new Microservice(false, '/shop', 'localhost:4003'),
     new Microservice(false, '/user', 'localhost:4001'),
     new Microservice(false, '/van', 'localhost:4009'),

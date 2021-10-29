@@ -1,5 +1,4 @@
 const express = require('express');
-const jsonParser = express.json();
 const router = require('./router');
 const logger = require('./logger');
 const app = express();
@@ -12,7 +11,7 @@ if (args[0]) {
 }
 
 // Load plugins/middlewares
-app.use(jsonParser, logger, router);
+app.use(express.json(), logger, router);
 
 // Starting server
 app.listen(port, () => {
