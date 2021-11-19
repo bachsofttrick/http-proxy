@@ -6,6 +6,7 @@ const serverList = require('./serverList');
 const router = express.Router();
 
 const options = {
+    limit: null,
     proxyReqPathResolver: (req) => {
         return req.originalUrl;
     }

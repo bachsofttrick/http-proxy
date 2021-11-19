@@ -1,7 +1,9 @@
 const express = require('express');
+const multer = require('multer');
 const router = require('./router');
 const logger = require('./logger');
 const app = express();
+const upload = multer();
 let port = 80;
 
 // Parse port number. If not defined, use default port
@@ -11,7 +13,7 @@ if (args[0]) {
 }
 
 // Load plugins/middlewares
-app.use(express.json(), logger, router);
+app.use(logger, router);
 
 // Starting server
 app.listen(port, () => {
