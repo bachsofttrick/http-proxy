@@ -105,3 +105,8 @@ dist
 
 # Ignore external service (Please include your own)
 key.js
+
+# Self-signed keys (instructions inside index)
+key.pem
+cert.pem
+

@@ -3,6 +3,7 @@ const { Microservice, BlockchainService, SafeIdService } = require('./server-cla
 // Port are in accordance with SQL port (microservice)
 const serverList = [
     new Microservice(false, '/activity', 'localhost:4005'),
+    new Microservice(true, '/balance', 'localhost:4016'),
     new Microservice(false, '/config', 'localhost:4006'),
     new Microservice(true, '/ecommerce-shop', 'localhost:4010'),
     new Microservice(true, '/integration', 'localhost:4013'),
