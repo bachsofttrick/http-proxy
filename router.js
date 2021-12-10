@@ -7,6 +7,7 @@ const router = express.Router();
 
 const options = {
     limit: null,
+    parseReqBody: false,
     proxyReqPathResolver: (req) => {
         return req.originalUrl;
     }
