@@ -14,6 +14,16 @@ const options = {
 };
 
 for (const server of serverList) {
+    const options = {
+        limit: null,
+        parseReqBody: false,
+        proxyReqPathResolver: (req) => {
+            // split routes for different servers
+            const urlSplit = req.originalUrl.split('/' + server.type + '/');
+            return '/' + urlSplit[1];
+        }
+    };
+
     // Print list of servers to check for accuracy
     console.log(`[${server.route}]`, server.host);
     router.use(server.route, proxy(server.host, options));

@@ -5,7 +5,6 @@ const fs = require('fs');
 const router = require('./router');
 const logger = require('./logger');
 const app = express();
-const upload = multer();
 let httpsPort = 443;
 let port = 80;
 
@@ -29,9 +28,9 @@ app.listen(port, () => {
  */
 try
 {
-    const privateKey = fs.readFileSync('./key.pem', 'utf8')
-    const certificate = fs.readFileSync('./cert.pem', 'utf8')
-    const credentials = { key: privateKey, cert: certificate, passphrase: '1307' }
+    const privateKey = fs.readFileSync('./key.pem', 'utf8');
+    const certificate = fs.readFileSync('./cert.pem', 'utf8');
+    const credentials = { key: privateKey, cert: certificate, passphrase: '1307' };
     https.createServer(credentials, app).listen(httpsPort, () => {
       console.log(`Reverse proxy server is listening on https://localhost:${httpsPort}`);
     });

@@ -1,4 +1,4 @@
-const { Microservice, BlockchainService, SafeIdService } = require('./server-class');
+const { CareService, Microservice, BlockchainService, SafeIdService } = require('./server-class');
 
 // Port are in accordance with SQL port (microservice)
 const serverList = [
@@ -17,6 +17,14 @@ const serverList = [
     new Microservice(false, '/tenant', 'localhost:4012'),
     new Microservice(false, '/user', 'localhost:4001'),
     new Microservice(false, '/van', 'localhost:4009'),
+    new CareService(false, '/balance', 'localhost:4016'),
+    new CareService(false, '/config', 'localhost:4006'),
+    new CareService(false, '/ecommerce-shop', 'localhost:4010'),
+    new CareService(false, '/member', 'localhost:4002'),
+    new CareService(false, '/notification', 'localhost:4007'),
+    new CareService(false, '/promotions', 'localhost:4008'),
+    new CareService(false, '/sale', 'localhost:4004'),
+    new CareService(false, '/user', 'localhost:4001'),
     new BlockchainService(false, '/api', 'localhost:3000'),
     new SafeIdService(false, '/api', 'localhost:3000')
 ];

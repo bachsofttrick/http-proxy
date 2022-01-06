@@ -1,7 +1,8 @@
 const notUsingLocal = {
-microservice: '',
+micro: '',
 blockchain: '',
 safeid: '',
+care: ''
 };
 const distFolder = [
 'D:/'
