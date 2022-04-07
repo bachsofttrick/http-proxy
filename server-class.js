@@ -26,6 +26,12 @@ class Microservice extends Server {
     }
 }
 
+class MicroserviceTenant extends Server {
+    constructor(useLocal, route, host) {
+        super(useLocal, route, host, 'micro-tenant');
+    }
+}
+
 class BlockchainService extends Server {
     constructor(useLocal, route, host) {
         super(useLocal, route, host, 'blockchain');
@@ -38,4 +44,4 @@ class SafeIdService extends Server {
     }
 }
 
-module.exports = { CareService, Microservice, BlockchainService, SafeIdService };
+module.exports = { CareService, Microservice, MicroserviceTenant, BlockchainService, SafeIdService };
